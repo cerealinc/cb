@@ -1,0 +1,105 @@
+body{
+    background-color: #fbfcf4;
+}
+.section{
+    text-align: center;
+    font-size: 4em;
+    color: #000;
+}
+
+.actions{
+    list-style-type: none;
+}
+.actions button{
+    padding: .93em 1.87em;
+    background: #35495e;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    margin: 7px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.actions button:hover{
+    background: #fff;
+    color: #35495e;
+}
+h1 {
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+.telling {
+    margin-bottom: -30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.curating img {
+    margin-top: 20px;
+
+}
+h2 {
+    line-height: 1.1;
+    letter-spacing: 3px;
+}
+.clients {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+.clients ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0 1.2%;
+    font-size: 0.6em;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+  }
+
+.pattern {
+    overflow: hidden;
+    height: 100vh !important;
+    width: 100vw !important;
+}
+
+.LOGOTYPE {position: absolute;
+    margin-left: -400px;
+    left: 50%;
+
+}
+
+.asset-1 {
+    position: absolute;
+    top: calc(50vh - 115px);
+    left: calc(50vw - 68px);
+    z-index: 2;
+    max-width: 100px;
+    height: auto;
+}
+.asset-3 {
+    position: absolute;
+    top:  calc(50vh - 187px);
+    left: calc(50vw - 66px);
+    z-index: 2;
+    max-width: 50px;
+    height: auto;
+}
+.asset-2 {
+    position: absolute;
+    top: calc(50vh - 204px);
+    left: calc(50vw - 13px);
+    z-index: 2;
+    max-width: 108px;
+    height: auto;
+}
+.asset-4 {
+    position: absolute;
+    top:  calc(50vh - 200px);
+    left: calc(50vw - 90px);
+    max-width: 180px !important;
+    height: auto;
+}
