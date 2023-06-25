@@ -41,6 +41,7 @@ h1 {
 h2 {
     line-height: 1.1;
     letter-spacing: 3px;
+    font-size: 1.3em;
 }
 .clients {
     display: flex;
@@ -65,6 +66,9 @@ h2 {
     height: 100vh !important;
     width: 100vw !important;
 }
+.pattern .mobile {
+    display: none;
+}
 
 .LOGOTYPE {position: absolute;
     margin-left: -400px;
@@ -73,7 +77,7 @@ h2 {
 }
 
 .asset-1 {
-    position: absolute;
+    position: fixed;
     top: calc(50vh - 115px);
     left: calc(50vw - 68px);
     z-index: 2;
@@ -81,7 +85,7 @@ h2 {
     height: auto;
 }
 .asset-3 {
-    position: absolute;
+    position: fixed;
     top:  calc(50vh - 187px);
     left: calc(50vw - 66px);
     z-index: 2;
@@ -89,7 +93,7 @@ h2 {
     height: auto;
 }
 .asset-2 {
-    position: absolute;
+    position: fixed;
     top: calc(50vh - 204px);
     left: calc(50vw - 13px);
     z-index: 2;
@@ -102,4 +106,96 @@ h2 {
     left: calc(50vw - 90px);
     max-width: 180px !important;
     height: auto;
+}
+.fp-viewing-1
+.asset-1 {
+    top: calc(27vh);
+    left: calc(45vw);
+    z-index: 0;
+    transition: ease-in-out 1200ms;
+}
+.fp-viewing-1 .asset-2 {
+    top: calc(50vh);
+    left: calc(35vw);
+    z-index: 0;
+    transition: ease-in-out 1300ms;
+}
+
+.fp-viewing-1 .asset-3 {
+    top:  calc(64vh);
+    left: calc(57vw);
+    z-index: 0;
+    transition: ease-in-out 1400ms;
+    rotate: -90deg;
+}
+
+.fp-viewing-2 .asset-1, .fp-viewing-2 .asset-2, .fp-viewing-2 .asset-3 {
+    z-index: -1;
+    transition: ease-in-out 1400ms;
+}
+.fp-viewing-2
+.asset-1 {
+    top: calc(27vh);
+    left: calc(15vw);
+    z-index: 0;
+    rotate: 40deg;
+}
+.fp-viewing-2 .asset-2 {
+    top: calc(80vh);
+    left: calc(85vw);
+    z-index: 0;
+    rotate: 110deg;
+}
+
+.fp-viewing-2 .asset-3 {
+    top:  calc(44vh);
+    left: calc(17vw);
+    rotate: -40deg;
+    z-index: 0;
+
+}
+
+.fp-viewing-3
+.asset-1 {
+    top: calc(74vh);
+    left: calc(15vw);
+    z-index: 0;
+    rotate: 80deg;
+}
+.fp-viewing-3 .asset-2 {
+    top: calc(66vh);
+    left: calc(85vw);
+    z-index: 0;
+    rotate: 110deg;
+}
+
+.fp-viewing-3 .asset-3 {
+    top:  calc(49vh);
+    left: calc(41vw);
+    rotate: 0deg;
+    z-index: 0;
+}
+
+
+@media (max-width: 767px){
+    .section{
+        font-size: 2em;
+    }
+    .pattern .desktop{
+        display: none;
+    }
+    .pattern .mobile {
+        display: block;
+        height: 100vh;
+        width: fit-content;
+        overflow: hidden;
+    }
+    .LOGOTYPE {
+        position: absolute;
+        margin-left: auto;
+        left: auto;
+        right: 10vw;
+        width: 80vw;
+        height: auto;
+        display: blo
 }

@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from 'next/image'
 import ReactDOM from "react-dom";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Head from 'next/head'
-import { motion, AnimatePresence, useInView } from "framer-motion"
+import { motion, AnimatePresence, useInView, useScroll, useTransform  } from "framer-motion"
 import localFont from '@next/font/local'
-import { useRef } from 'react';
 
 // NOTE: if using fullpage extensions/plugins put them here and pass it as props.
 const pluginWrapper = () => {
@@ -26,31 +25,26 @@ export default function Connect(props) {
 
 
   const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
   const isInView = useInView(ref, {
     amount: 1
   })
-
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
     return (
       <>
       <AnimatePresence mode='wait' initial={true}>
 
-      <div className="App">
+      <div ref={ref} className="App">
         <Head>
-          <title>My styled page</title>
+          <title>CARVINGBLOCK</title>
           <link href="/static/styles.css" rel="stylesheet" />
         </Head>
-
-        <ReactFullpage
-          navigation
-          scrollingSpeed={1200}
-          pluginWrapper={pluginWrapper}
-          render={comp =>
-            console.log("render prop change") || (
-              <ReactFullpage.Wrapper>
-
-                  <div style={{overflow: "hidden"}}  ref={ref} className="section">
-
-                  <motion.img
+        <motion.img
+                style={{ y: textY }}
               src="/Asset-1-3x.png"
               alt="Vercel Logo"
               className="asset-1"
@@ -98,6 +92,16 @@ export default function Connect(props) {
               height={412}
               priority
             />
+        <ReactFullpage
+          navigation
+          scrollingSpeed={1200}
+          pluginWrapper={pluginWrapper}
+          render={comp =>
+            console.log("render prop change") || (
+              <ReactFullpage.Wrapper>
+
+                  <div style={{overflow: "hidden"}}  ref={ref} className="section">
+
                   <motion.img
               src="/Asset-4-3x.png"
               alt="Vercel Logo"
@@ -154,18 +158,27 @@ to gather.</h1>
                   <Image
               src="/PATTERN-desktop.png"
               alt="Vercel Logo"
-              className="hey"
+              className="desktop"
               width={2000}
               height={1235}
+              priority
+            />
+                              <Image
+              src="/PATTERN-mobile.png"
+              alt="Vercel Logo"
+              className="mobile"
+              width={600}
+              height={1057}
               priority
             />
                               </div>
 
                   </div>
-                  <div className="section curating">
-                    <h2 style={{fontWeight: 100}}>
-                    <span style={{fontWeight: 400}} className={myFont.className}>CURATING </span><span className={TimesNow.className}>Communications<br/>
-for The Hospitality Space</span></h2>
+                  <div ref={ref} className="section curating">
+                    <motion.h2
+        style={{ y: textY }} className={isInView ? "fuck" : "nope"} >
+                    <span style={{fontWeight: 400}} className={myFont.className}>CURATING </span><span style={{fontWeight: 100}} className={TimesNow.className}>Communications<br/>
+for The Hospitality Space</span></motion.h2>
 <Image
               src="/A.png"
               alt="Vercel Logo"
@@ -175,7 +188,7 @@ for The Hospitality Space</span></h2>
               priority
             /> 
 
-<div className="clients">
+<div className="clients" style={{fontWeight: 100}}>
   <ul className={myFont.className}>
   <li>CLIENT NAME</li>
   <li>CLIENT NAME</li>
@@ -218,7 +231,9 @@ for The Hospitality Space</span></h2>
   </ul>
 </div>
 
-
+      <motion.h2 style={{ y: textY }} className={isInView ? "fuck" : "nope"} >
+                    <span style={{fontWeight: 400}} className={myFont.className}>CARVE </span><span style={{fontWeight: 100}} className={TimesNow.className}>Out Your Future With Us</span>
+                    </motion.h2>
                   </div>
               </ReactFullpage.Wrapper>
               
