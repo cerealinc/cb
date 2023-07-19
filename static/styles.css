@@ -33,7 +33,14 @@ h1 {
     margin-left: 20px;
     margin-right: 20px;
 }
-
+.curating {
+    opacity: 0;
+    transition: ease-in-out 300ms;
+}
+.curating.active {
+    opacity: 1;
+    transition: 200ms ease-in-out 300ms;
+}
 .curating img {
     margin-top: 20px;
 
@@ -75,7 +82,9 @@ h2 {
     left: 50%;
 
 }
-
+.loaded .asset-1, .loaded .asset-2, .loaded .asset-3 {
+    transition: ease-in-out 1200ms;
+}
 .asset-1 {
     position: fixed;
     top: calc(50vh - 115px);
