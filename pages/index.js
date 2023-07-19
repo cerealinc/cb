@@ -86,7 +86,7 @@ export default function Connect(props) {
             priority
           />
           <ReactFullpage
-            navigation
+            navigation={false}
             scrollingSpeed={1200}
             pluginWrapper={pluginWrapper}
             render={(comp) =>
