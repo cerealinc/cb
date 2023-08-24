@@ -45,9 +45,9 @@ export default function Connect(props) {
               console.log("Completed animating", definition);
             }}
             transition={{
-              delay: 0.8,
+              delay: 0.6,
               ease: "linear",
-              duration: 6,
+              duration: 4,
             }}
             width={300}
             height={286}
@@ -61,9 +61,9 @@ export default function Connect(props) {
             animate={{ y: 0, x: 0, rotate: [170, 0] }}
             exit={{}}
             transition={{
-              delay: 1,
+              delay: 0.4,
               ease: "easeIn",
-              duration: 5.2,
+              duration: 4.2,
             }}
             width={300}
             height={322}
@@ -77,9 +77,9 @@ export default function Connect(props) {
             animate={{ y: 0, x: 0, rotate: [360, 0] }}
             exit={{}}
             transition={{
-              delay: 1.2,
+              delay: 0.6,
               ease: "easeIn",
-              duration: 5,
+              duration: 4,
             }}
             width={300}
             height={412}
@@ -105,9 +105,9 @@ export default function Connect(props) {
                       animate={{ y: 0, x: 0, rotate: [360, 0] }}
                       exit={{}}
                       transition={{
-                        delay: 1,
+                        delay: 0.2,
                         ease: "easeIn",
-                        duration: 5,
+                        duration: 4.4,
                       }}
                       width={400}
                       height={424}
@@ -122,7 +122,7 @@ export default function Connect(props) {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{
-                        delay: 6,
+                        delay: 4,
                         ease: "easeIn",
                         duration: 1,
                       }}
@@ -246,8 +246,9 @@ export default function Connect(props) {
                         <li>CLIENT NAME</li>
                       </ul>
                     </div>
-
-                    <motion.h2
+                  </div>
+                  <div  className="section" >
+                  <motion.h2
                     >
                       <span
                         style={{ fontWeight: 400 }}
@@ -262,7 +263,10 @@ export default function Connect(props) {
                         Out Your Future With Us
                       </span>
                     </motion.h2>
-                  </div>
+                    <form>
+                      <input className="email-address" placeholder="YOUR EMAIL HERE"/>
+                    </form>
+</div>
                 </ReactFullpage.Wrapper>
               )
             }
