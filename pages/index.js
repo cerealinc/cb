@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import ReactDOM from "react-dom";
 import ReactFullpage from "@fullpage/react-fullpage";
+import { useInView } from "react-intersection-observer";
 import Head from "next/head";
 import {
   motion,
   AnimatePresence,
+  useAnimation,
   useTransform,
 } from "framer-motion";
 import localFont from "@next/font/local";
-
+const squareVariants = {
+  visible: { y: 0, transition: { duration: 1 } },
+  hidden: { y: 100 }
+};
 // NOTE: if using fullpage extensions/plugins put them here and pass it as props.
 const pluginWrapper = () => {
   /*
@@ -24,7 +29,13 @@ const OldTimesAmerican = localFont({
 const TimesNow = localFont({ src: "../public/font/TimesNow-ExtraLight.otf" });
 
 export default function Connect(props) {
-
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <>
       <AnimatePresence mode="wait" initial={true}>
@@ -195,10 +206,12 @@ export default function Connect(props) {
                         for The Hospitality Space
                       </span>
                     </motion.h2>
-                    <Image
+                    <motion.img
                       src="/A.png"
                       alt="Vercel Logo"
-                      className=""
+                      ref={ref}
+                      animate={{y:0}}
+                      initial={{y:"100px"}}
                       width={220}
                       height={220}
                       priority
@@ -246,9 +259,13 @@ export default function Connect(props) {
                         <li>CLIENT NAME</li>
                       </ul>
                     </div>
-                  </div>
-                  <div  className="section" >
+    
                   <motion.h2
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={squareVariants}
+      className="square"
                     >
                       <span
                         style={{ fontWeight: 400 }}
@@ -266,6 +283,15 @@ export default function Connect(props) {
                     <form>
                       <input className="email-address" placeholder="YOUR EMAIL HERE"/>
                     </form>
+                    <Image
+                      src="/CB_LOGO.png"
+                      alt="Vercel Logo"
+                      className=""
+                      style={{marginBottom: "100px"}}
+                      width={140}
+                      height={82}
+                      priority
+                    />
 </div>
                 </ReactFullpage.Wrapper>
               )
