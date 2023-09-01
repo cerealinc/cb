@@ -1,20 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import ReactDOM from "react-dom";
 import ReactFullpage from "@fullpage/react-fullpage";
-import { useInView } from "react-intersection-observer";
 import Head from "next/head";
 import {
   motion,
   AnimatePresence,
   useAnimation,
+  useInView,
   useTransform,
 } from "framer-motion";
 import localFont from "@next/font/local";
-const squareVariants = {
-  visible: { y: 0, transition: { duration: 1 } },
-  hidden: { y: 100 }
-};
+
 // NOTE: if using fullpage extensions/plugins put them here and pass it as props.
 const pluginWrapper = () => {
   /*
@@ -29,13 +26,10 @@ const OldTimesAmerican = localFont({
 const TimesNow = localFont({ src: "../public/font/TimesNow-ExtraLight.otf" });
 
 export default function Connect(props) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
     <>
       <AnimatePresence mode="wait" initial={true}>
@@ -188,7 +182,7 @@ export default function Connect(props) {
                       />
                     </div>
                   </div>
-                  <div  className="section curating" >
+                  <div  className="section curating">
                     <motion.h2
                     >
                       <span
@@ -207,11 +201,14 @@ export default function Connect(props) {
                       </span>
                     </motion.h2>
                     <motion.img
+                     ref={ref}
+                              style={{
+                                transform: isInView ? "none" : "translatey(80px)",
+                                marginBottom: isInView ? "60px" : "0px",
+                                transition: "all 800ms cubic-bezier(0.17, 0.55, 0.55, 1)",
+                              }}
                       src="/A.png"
                       alt="Vercel Logo"
-                      ref={ref}
-                      animate={{y:0}}
-                      initial={{y:"100px"}}
                       width={220}
                       height={220}
                       priority
@@ -259,13 +256,16 @@ export default function Connect(props) {
                         <li>CLIENT NAME</li>
                       </ul>
                     </div>
-    
+                    </div>
+                    <div className="section">
+
                   <motion.h2
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={squareVariants}
-      className="square"
+ ref={ref}
+      style={{
+        transform: isInView ? "none" : "translatey(100px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+      }}
                     >
                       <span
                         style={{ fontWeight: 400 }}
@@ -283,11 +283,17 @@ export default function Connect(props) {
                     <form>
                       <input className="email-address" placeholder="YOUR EMAIL HERE"/>
                     </form>
-                    <Image
+                    <motion.img
+                     ref={ref}
+      style={{
+        transform: isInView ? "none" : "translatey(100px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        marginBottom: "100px"
+      }}
                       src="/CB_LOGO.png"
                       alt="Vercel Logo"
                       className=""
-                      style={{marginBottom: "100px"}}
                       width={140}
                       height={82}
                       priority
