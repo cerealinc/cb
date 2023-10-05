@@ -28,6 +28,9 @@ body{
     border-bottom:  none;
     text-decoration: none;
 }
+.footer-container a:hover {
+    text-decoration: underline;
+}
 .section{
     text-align: center;
     font-size: 4em;
@@ -107,6 +110,7 @@ h2 {
     justify-content: center;
     font-weight: 300;
   }
+  .clients-mobile {display: none;}
 
 .pattern {
     overflow: hidden;
@@ -266,6 +270,12 @@ h2 {
     margin-left: -150px;
 }
 @media (max-width: 767px){
+    .clients-desktop {display: none;}
+    .clients-mobile {
+        font-size: 1.6rem;
+        padding: 0 12px;
+        display: block;}
+
     .section{
         font-size: 2em;
     }

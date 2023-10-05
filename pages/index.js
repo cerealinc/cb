@@ -8,6 +8,7 @@ import {
   AnimatePresence,
   useAnimation,
   useInView,
+  cubicBezier,
   useTransform,
 } from "framer-motion";
 import localFont from "@next/font/local";
@@ -109,6 +110,7 @@ export default function Connect(props) {
 
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const easing = cubicBezier(0.250, 0.250, 0.000, 1.045)
 
   return (
     <>
@@ -123,17 +125,16 @@ export default function Connect(props) {
             alt="Vercel Logo"
             className="asset-1"
             initial={{ y: "79vh", x: "-43vw" }}
-            animate={{ y: 0, x: 0, rotate: [0, 180, 360, 270, 0] }}
+            animate={{ y: 0, x: 0, rotate: [0, -360] }}
             exit={{}}
             onAnimationComplete={(definition) => {
               document.body.classList.add("loaded");
               console.log("Completed animating", definition);
             }}
             transition={{
-              delay: 0.6,
-              ease: "easeIn",
-              duration: 4,
-            }}
+              delay: 0.4,
+              easing, duration: 4.2,}}
+
             width={300}
             height={286}
             priority
@@ -147,9 +148,8 @@ export default function Connect(props) {
             exit={{}}
             transition={{
               delay: 0.4,
-              ease: "easeIn",
-              duration: 4.2,
-            }}
+              easing, duration: 4.2,}}
+
             width={300}
             height={322}
             priority
@@ -163,9 +163,8 @@ export default function Connect(props) {
             exit={{}}
             transition={{
               delay: 0.6,
-              ease: "easeIn",
-              duration: 4,
-            }}
+              easing, duration: 4,}}
+
             width={300}
             height={412}
             priority
@@ -191,9 +190,8 @@ export default function Connect(props) {
                       exit={{}}
                       transition={{
                         delay: 0.2,
-                        ease: "easeIn",
-                        duration: 4.4,
-                      }}
+                        easing, duration: 4.3,}}
+          
                       width={400}
                       height={424}
                       priority
@@ -288,8 +286,7 @@ export default function Connect(props) {
                       height={220}
                       priority
                     />
-
-                    <div className="clients" style={{ fontWeight: 100 }}>
+ <div className="clients clients-desktop" style={{ fontWeight: 100 }}>
                       <ul className={myFont.className}>
 
                           <li>Amazon Studios</li>
@@ -316,6 +313,7 @@ export default function Connect(props) {
                            <li>Yangban</li>
                            <li>NVE</li>
                            <li>The Line Hotel</li>
+                           <li>Client placeholder</li>
 
                       </ul>
 
@@ -332,6 +330,43 @@ export default function Connect(props) {
                                 <li>Ggiata</li>
                                 <li>TenderFest</li>
                       </ul>
+                    </div>
+                    <div className="clients clients-mobile" style={{ fontWeight: 100 }}>
+                      <p className={myFont.className}>
+
+                        Amazon Studios, 
+                        Diageo, 
+                      Flamingo Estate, 
+                        Coachella, 
+                        Los Angeles Times, 
+                        The Coca Cola Company, 
+                        Family Style Food Festival, 
+                        The Big Global Company, 
+                        Hulu, 
+                        FX, 
+                        Grand Central Market, 
+                        Broad Street Oyster Co., 
+                        Caruso, 
+                        Caviar Kaspia, 
+                        Ginza Nishikawa, 
+                        Dorsia, 
+                        CINESPIA, 
+                        Best Bet, 
+                        Yangban, 
+                        NVE, 
+                        The Line Hotel, 
+                        Grupo Hunan, 
+                        sbe, 
+                        Ace Hotel, 
+                        Boka Group, 
+                        Best Buddy Hospitality, 
+                        Big Noise Beer, 
+                        Aldar, 
+                        Tacos 1986,
+                        Yeastie Boy Bagels,
+                        Ggiata,
+                        TenderFest
+                        </p>
                     </div>
                     </div>
                     <div className="section">
@@ -421,7 +456,7 @@ export default function Connect(props) {
                             >
                               <div className="footer-container">
                     <Link href="Contact" className={myFont.className} style={{float: "left"}}>Contact</Link>
-                    <Link href="Contact" className={myFont.className} style={{float: "right"}}>Instagram</Link>
+                    <Link href="https://www.instagram.com/carvingblockpr/" className={myFont.className} style={{float: "right"}}>Instagram</Link>
                     </div>
                     </motion.div>
 </div>
