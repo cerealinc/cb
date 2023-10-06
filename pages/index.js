@@ -171,17 +171,19 @@ export default function Connect(props) {
           />
           <ReactFullpage
             navigation={false}
+            continuousVertical={true}
             scrollingSpeed={1200}
             pluginWrapper={pluginWrapper}
             render={(comp) =>
               console.log("render prop change") || (
                 <ReactFullpage.Wrapper>
-                  <div
+                  <motion.div
+                  ref={ref}
                     style={{ overflow: "hidden" }}
-                    
                     className="section"
                   >
                     <motion.img
+
                       src="/Asset-4-3x.png"
                       alt="Vercel Logo"
                       className="asset-4"
@@ -213,7 +215,7 @@ export default function Connect(props) {
                       height={235}
                       priority
                     />
-                  </div>
+                  </motion.div>
                   <div
                       className="section"
                   >
@@ -376,7 +378,7 @@ export default function Connect(props) {
       style={{
         transform: isInView ? "none" : "translatey(100px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        transition: "all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
       }}
                     >
                       <span
