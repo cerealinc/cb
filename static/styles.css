@@ -270,6 +270,32 @@ h2 {
     margin-left: -150px;
 }
 @media (max-width: 767px){
+
+
+    .asset-1 {
+        max-width: 63px;
+        height: auto;
+        top: calc(50vh - 58px);
+        left: calc(50vw - 45px);
+    }
+    .asset-3 {
+        max-width: 36px;
+        height: auto;
+        top: calc(50vh - 110px);
+        left: calc(50vw - 45px);
+    }
+    .asset-2 {
+        max-width: 74px;
+        height: auto;
+        top: calc(50vh - 124px);
+        left: calc(50vw - 12px);
+    }
+    .asset-4 {
+        max-width: 120px !important;
+        height: auto;
+        top:  calc(50vh - 120px);
+        left: calc(50vw - 60px);
+    }
     .clients-desktop {display: none;}
     .clients-mobile {
         font-size: 1.6rem;
