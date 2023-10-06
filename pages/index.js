@@ -124,7 +124,7 @@ export default function Connect(props) {
             src="/Asset-1-3x.png"
             alt="Vercel Logo"
             className="asset-1"
-            initial={{ y: "79vh", x: "-43vw" }}
+            initial={{ y: "79vh", x: "-49vw" }}
             animate={{ y: 0, x: 0, rotate: [0, -360] }}
             exit={{}}
             onAnimationComplete={(definition) => {
@@ -143,7 +143,7 @@ export default function Connect(props) {
             src="/Asset-2-3x.png"
             alt="Vercel Logo"
             className="asset-2"
-            initial={{ y: "9vh", x: "63vw" }}
+            initial={{ y: "9vh", x: "69vw" }}
             animate={{ y: 0, x: 0, rotate: [170, 0] }}
             exit={{}}
             transition={{
@@ -158,7 +158,7 @@ export default function Connect(props) {
             src="/Asset-3-3x.png"
             alt="Vercel Logo"
             className="asset-3"
-            initial={{ y: "-59vh", x: "-33vw" }}
+            initial={{ y: "-59vh", x: "-38vw" }}
             animate={{ y: 0, x: 0, rotate: [360, 0] }}
             exit={{}}
             transition={{
@@ -187,7 +187,7 @@ export default function Connect(props) {
                       src="/Asset-4-3x.png"
                       alt="Vercel Logo"
                       className="asset-4"
-                      initial={{ y: "-29vh", x: "63vw" }}
+                      initial={{ y: "-29vh", x: "73vw" }}
                       animate={{ y: 0, x: 0, rotate: [360, 0] }}
                       exit={{}}
                       transition={{

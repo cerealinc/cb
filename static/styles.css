@@ -277,25 +277,25 @@ h2 {
     .asset-1 {
         max-width: 63px;
         height: auto;
-        top: calc(50vh - 78px);
+        top: calc(50vh - 98px);
         left: calc(50vw - 45px);
     }
     .asset-3 {
         max-width: 36px;
         height: auto;
-        top: calc(50vh - 130px);
+        top: calc(50vh - 150px);
         left: calc(50vw - 45px);
     }
     .asset-2 {
         max-width: 74px;
         height: auto;
-        top: calc(50vh - 144px);
+        top: calc(50vh - 164px);
         left: calc(50vw - 12px);
     }
     .asset-4 {
         max-width: 120px !important;
         height: auto;
-        top:  calc(50vh - 140px);
+        top:  calc(50vh - 160px);
         left: calc(50vw - 60px);
     }
     .clients-desktop {display: none;}
