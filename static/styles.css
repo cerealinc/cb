@@ -40,6 +40,7 @@ body{
 
 .fp-section {
     opacity: 1;
+    height: 100vh !important;
 }
 
 .fp-watermark {
@@ -165,20 +166,20 @@ h2 {
     top: calc(27vh);
     left: calc(45vw);
     z-index: 0;
-    transition: ease-in-out 1200ms;
+    transition: z-index ease-in-out 600ms, top ease-in-out 1300ms, left ease-in-out 1300ms;
 }
 .fp-viewing-1 .asset-2 {
     top: calc(50vh);
     left: calc(35vw);
     z-index: 0;
-    transition: ease-in-out 1300ms;
+    transition: z-index ease-in-out 600ms, top ease-in-out 1300ms, left ease-in-out 1300ms;
 }
 
 .fp-viewing-1 .asset-3 {
     top:  calc(64vh);
     left: calc(57vw);
     z-index: 0;
-    transition: ease-in-out 1400ms;
+    transition: z-index ease-in-out 600ms, top ease-in-out 1300ms, left ease-in-out 1300ms, rotate ease-in-out 1300ms;
     rotate: -90deg;
 }
 
@@ -261,6 +262,15 @@ h2 {
     text-align: center;
     margin-bottom: 60px;
 }
+input.email-address:focus, 
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:autofill {
+    background: transparent !important;
+    background-color: #fbfcf4 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #fbfcf4 inset;
+
+  }
 
 .form-image {
     position: absolute;

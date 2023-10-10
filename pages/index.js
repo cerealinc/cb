@@ -171,7 +171,6 @@ export default function Connect(props) {
           />
           <ReactFullpage
             navigation={false}
-            continuousVertical={true}
             scrollingSpeed={1200}
             pluginWrapper={pluginWrapper}
             render={(comp) =>
@@ -378,7 +377,7 @@ export default function Connect(props) {
       style={{
         transform: isInView ? "none" : "translatey(100px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
       }}
                     >
                       <span
@@ -396,7 +395,14 @@ export default function Connect(props) {
                     </motion.h2>
 
 
-
+<motion.div
+        ref={ref}
+       style={{
+        transform: isInView ? "translatey(0px)" : "translatey(100px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+      }}
+      >
 <form className='form' onSubmit={handleSubmit}>
             
 <input type="email" name="email" value={email} className="email-address" placeholder="YOUR EMAIL HERE"
@@ -431,13 +437,13 @@ export default function Connect(props) {
                   </p>
                 )}
             </form>
-
+            </motion.div>
                     <motion.img
                      ref={ref}
       style={{
         transform: isInView ? "none" : "translatey(100px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         marginBottom: "100px"
       }}
                       src="/CB_LOGO.png"
@@ -450,14 +456,14 @@ export default function Connect(props) {
 
                     <motion.div className="footer" ref={ref}
        style={{
-        transform: isInView ? "translatey(0px)" : "translatey(80px)",
+        transform: isInView ? "translatey(0px)" : "translatey(100px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.5s",
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
       }}
                                 
                             >
                               <div className="footer-container">
-                    <Link href="Contact" className={myFont.className} style={{float: "left"}}>Contact</Link>
+                    <Link href="mailto:info@carvingblockpr.com" className={myFont.className} style={{float: "left"}}>Contact</Link>
                     <Link href="https://www.instagram.com/carvingblockpr/" className={myFont.className} style={{float: "right"}}>Instagram</Link>
                     </div>
                     </motion.div>
