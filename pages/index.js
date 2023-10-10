@@ -396,7 +396,6 @@ export default function Connect(props) {
 
 
 <motion.div
-        ref={ref}
        style={{
         transform: isInView ? "translatey(0px)" : "translatey(100px)",
         opacity: isInView ? 1 : 0,
@@ -439,7 +438,6 @@ export default function Connect(props) {
             </form>
             </motion.div>
                     <motion.img
-                     ref={ref}
       style={{
         transform: isInView ? "none" : "translatey(100px)",
         opacity: isInView ? 1 : 0,
@@ -454,7 +452,7 @@ export default function Connect(props) {
                       priority
                     />
 
-                    <motion.div className="footer" ref={ref}
+                    <motion.div className="footer"
        style={{
         transform: isInView ? "translatey(0px)" : "translatey(100px)",
         opacity: isInView ? 1 : 0,
