@@ -241,7 +241,7 @@ export default function Connect(props) {
                       to gather.
                     </h1>
                   </div>
-                  <div className="section">
+                  <div className="section section-pattern">
                     <div className="pattern">
                       <Image
                         src="/PATTERN-desktop.png"

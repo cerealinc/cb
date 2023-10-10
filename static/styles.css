@@ -40,9 +40,10 @@ body{
 
 .fp-section {
     opacity: 1;
+}
+.section-pattern.fp-section {
     height: 100vh !important;
 }
-
 .fp-watermark {
     right: -330px !important;
     opacity: 0 !important;
