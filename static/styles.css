@@ -18,7 +18,7 @@ body{
     margin: auto;
     padding: 0 26px;
 }
-.footer-container a {
+.footer-container a, .form-image p {
     font-size: 0.5em;
     letter-spacing: 1;
     color: #6e6e6e;
@@ -31,6 +31,11 @@ body{
 .footer-container a:hover {
     text-decoration: underline;
 }
+.form-image p {
+    font-size: 0.25em;
+    margin-top: 0;
+}
+
 .section{
     text-align: center;
     font-size: 4em;
@@ -340,5 +345,9 @@ input:autofill {
     margin-bottom: -12px;
     margin-left: 0px;
     margin-right: 0px;
+}
+.form-image p {
+    font-size: 0.5em;
+    margin-top: 8px;
 }
 }

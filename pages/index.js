@@ -422,13 +422,17 @@ export default function Connect(props) {
 
                 </button>
                 {showSuccessMessage && (
+                  <div className="form-image">
                                       <Image
-                                      className="form-image"
+                                      className=""
                                       src="/C.png"
                                       alt="Thank You!"
                                       width={300}
                                       height={300}
                                     />
+                                    <p className={myFont.className}>(WE'LL BE BREAKING BREAD SOON)</p>
+                                    </div>
+
                 )}
                 {showFailureMessage && (
                   <p className="text-red-500">
