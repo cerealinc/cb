@@ -118,7 +118,9 @@ export default function Connect(props) {
         <div className="App">
           <Head>
             <title>CARVINGBLOCK</title>
+            <meta name="description" content="We curate hospitality communications. Telling the stories that set the table for the world to gather." />
             <link href="/static/styles.css" rel="stylesheet" />
+            <link rel="icon" href="/favicon.png" />
           </Head>
           <motion.img
             src="/Asset-1-3x.png"
@@ -137,6 +139,11 @@ export default function Connect(props) {
 
             width={300}
             height={286}
+            style={{
+              top: isInView ? "122vh" : "",
+              left: isInView ? "-52vh" : "",
+
+            }}
             priority
           />
           <motion.img
@@ -152,6 +159,11 @@ export default function Connect(props) {
 
             width={300}
             height={322}
+            style={{
+              top: isInView ? "122vh" : "",
+              left: isInView ? "115vw" : "",
+
+            }}
             priority
           />
           <motion.img
@@ -167,6 +179,11 @@ export default function Connect(props) {
 
             width={300}
             height={412}
+            style={{
+              top: isInView ? "122vh" : "",
+              left: isInView ? "-65vw" : "",
+
+            }}
             priority
           />
           <ReactFullpage
@@ -369,8 +386,7 @@ export default function Connect(props) {
                         TenderFest
                         </p>
                     </div>
-                    </div>
-                    <div className="section">
+                    <div className="contact-section">
 
                   <motion.h2
  ref={ref}
@@ -446,7 +462,8 @@ export default function Connect(props) {
         transform: isInView ? "none" : "translatey(100px)",
         opacity: isInView ? 1 : 0,
         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
-        marginBottom: "100px"
+        marginBottom: "100px",
+        alignSelf: "center"
       }}
                       src="/CB_LOGO.png"
                       alt="Vercel Logo"
@@ -470,6 +487,8 @@ export default function Connect(props) {
                     </div>
                     </motion.div>
 </div>
+</div>
+
       </ReactFullpage.Wrapper>
       )
             }
