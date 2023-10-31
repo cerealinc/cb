@@ -386,15 +386,12 @@ export default function Connect(props) {
                         TenderFest
                         </p>
                     </div>
-                    <div className="contact-section">
+                    <div className="contact-section" style={{marginTop: '60px'}}>
 
-                  <motion.h2
- ref={ref}
-      style={{
-        transform: isInView ? "none" : "translatey(100px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
-      }}
+                  <h2
+                   ref={ref}
+
+
                     >
                       <span
                         style={{ fontWeight: 400 }}
@@ -408,16 +405,10 @@ export default function Connect(props) {
                       >
                         Out Your Future With Us
                       </span>
-                    </motion.h2>
+                    </h2>
 
 
-<motion.div
-       style={{
-        transform: isInView ? "translatey(0px)" : "translatey(100px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
-      }}
-      >
+<div>
 <form className='form' onSubmit={handleSubmit}>
             
 <input type="email" name="email" value={email} className="email-address" placeholder="YOUR EMAIL HERE"
@@ -456,12 +447,9 @@ export default function Connect(props) {
                   </p>
                 )}
             </form>
-            </motion.div>
-                    <motion.img
+            </div>
+                    <img
       style={{
-        transform: isInView ? "none" : "translatey(100px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         marginBottom: "100px",
         alignSelf: "center"
       }}
@@ -473,19 +461,14 @@ export default function Connect(props) {
                       priority
                     />
 
-                    <motion.div className="footer"
-       style={{
-        transform: isInView ? "translatey(0px)" : "translatey(100px)",
-        opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
-      }}
+                    <div className="footer"
                                 
                             >
                               <div className="footer-container">
                     <Link href="mailto:info@carvingblockpr.com" className={myFont.className} style={{float: "left"}}>Contact</Link>
                     <Link href="https://www.instagram.com/carvingblockpr/" className={myFont.className} style={{float: "right"}}>Instagram</Link>
                     </div>
-                    </motion.div>
+                    </div>
 </div>
 </div>
 
