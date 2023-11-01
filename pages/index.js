@@ -331,7 +331,7 @@ export default function Connect(props) {
                            <li>Yangban</li>
                            <li>NVE</li>
                            <li>The Line Hotel</li>
-                           <li>Client placeholder</li>
+                           <li>Coucou</li>
 
                       </ul>
 
