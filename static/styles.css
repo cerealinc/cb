@@ -359,3 +359,14 @@ input:autofill {
     margin-top: 8px;
 }
 }
+
+@media (max-height: 826px){
+    h1 {
+        font-size: 1.3em;
+    }
+}
+@media (max-height: 726px){
+    h1 {
+        font-size: 1.1em;
+    }
+}
