@@ -29,9 +29,6 @@ const pluginWrapper = () => {
 };
 
 const myFont = localFont({ src: "../public/font/ABCFavoritVariable.woff2" });
-const OldTimesAmerican = localFont({
-  src: "../public/font/OldTimesAmerican-Italic.ttf",
-});
 const TimesNow = localFont({ src: "../public/font/TimesNow-ExtraLight.otf" });
 
 export default function Connect(props) {
@@ -286,23 +283,12 @@ export default function Connect(props) {
                     </div>
                   </div>
                   <div  className="section curating">
-                    <motion.h2
+                    <div
+                    className="client-list-header"
                     >
-                      <span
-                        style={{ fontWeight: 400 }}
-                        className={myFont.className}
-                      >
-                        CURATING{" "}
-                      </span>
-                      <span
-                        style={{ fontWeight: 100 }}
-                        className={TimesNow.className}
-                      >
-                        Communications
-                        <br />
-                        for The Hospitality Space
-                      </span>
-                    </motion.h2>
+                        {documentToReactComponents(props.clientListHeader)}
+
+                    </div>
                     <Image
                       className="curating-image"
                       src={`https:${props.clientListImage.fields.file.url}`}
@@ -322,26 +308,13 @@ export default function Connect(props) {
                     </div>
 
                     <div className="contact-section" style={{marginTop: '60px'}}>
-
-                  <h2
-                   ref={ref}
-
-
+                    <div
+                                       ref={ref}
+                    className="contact-header"
                     >
-                      <span
-                        style={{ fontWeight: 400 }}
-                        className={myFont.className}
-                      >
-                        CARVE{" "}
-                      </span>
-                      <span
-                        style={{ fontWeight: 100 }}
-                        className={TimesNow.className}
-                      >
-                        Out Your Future With Us
-                      </span>
-                    </h2>
+                        {documentToReactComponents(props.contactHeader)}
 
+                    </div>
 
 <div>
 <form className='form' onSubmit={handleSubmit}>
