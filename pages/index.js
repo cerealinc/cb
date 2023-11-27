@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import ReactDOM from "react-dom";
@@ -13,7 +14,13 @@ import {
 } from "framer-motion";
 import localFont from "@next/font/local";
 import Link from "next/link";
+import * as contentful from "contentful";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+var client = contentful.createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+});
 // NOTE: if using fullpage extensions/plugins put them here and pass it as props.
 const pluginWrapper = () => {
   /*
@@ -233,7 +240,7 @@ export default function Connect(props) {
                     />
                   </motion.div>
                   <div
-                      className="section"
+                      className="section introText"
                   >
                     <h1 className={TimesNow.className}>
                       Telling
@@ -261,16 +268,16 @@ export default function Connect(props) {
                   <div className="section section-pattern">
                     <div className="pattern">
                       <Image
-                        src="/PATTERN-desktop.png"
-                        alt="Vercel Logo"
+                      src={`https:${props.imageBreakDesktop.fields.file.url}`}
+                      alt="Carving Block"
                         className="desktop"
                         width={2000}
                         height={1235}
                         priority
                       />
                       <Image
-                        src="/PATTERN-mobile.png"
-                        alt="Vercel Logo"
+                      src={`https:${props.imageBreakMobile.fields.file.url}`}
+                      alt="Carving Block"
                         className="mobile"
                         width={600}
                         height={1057}
@@ -298,94 +305,22 @@ export default function Connect(props) {
                     </motion.h2>
                     <Image
                       className="curating-image"
-                      src="/A.png"
-                      alt="Vercel Logo"
+                      src={`https:${props.clientListImage.fields.file.url}`}
+                      alt="Carving Block"
                       width={220}
                       height={220}
                       priority
                     />
  <div className="clients clients-desktop" style={{ fontWeight: 100 }}>
-                      <ul className={myFont.className}>
+<div className={myFont.className}>
+ <div className="col">
+  {documentToReactComponents(props.clientList)}
+</div>
+</div>
 
-                          <li>Amazon Studios</li>
-                          <li>Diageo</li>
-                          <li>Flamingo Estate</li>
-                          <li>Coachella</li>
-                          <li>Los Angeles Times</li>
-                          <li>The Coca Cola Company</li>
-                          <li>Family Style Food Festival</li>
-                          <li>The Big Global Company</li>
-                          <li>Hulu</li>
-                        <li>FX</li>  
-                        <li>Grand Central Market</li>
-
-                      </ul>
-                      <ul className={myFont.className}>
-                        <li>Broad Street Oyster Co.</li>
-                        <li>Caruso</li>
-                        <li>Caviar Kaspia</li>
-                        <li>Ginza Nishikawa</li>
-                        <li>Dorsia</li>
-                        <li>CINESPIA</li>
-                           <li>Best Bet</li>
-                           <li>Yangban</li>
-                           <li>NVE</li>
-                           <li>The Line Hotel</li>
-                           <li>Coucou</li>
-
-                      </ul>
-
-                      <ul className={myFont.className}>
-                           <li>Grupo Hunan</li>
-                           <li>sbe</li>
-                           <li>Ace Hotel</li>
-                                <li>Boka Group</li>
-                                <li>Best Buddy Hospitality</li>
-                                <li>Big Noise Beer</li>
-                                <li>Aldar</li>
-                                <li>Tacos 1986</li>
-                                <li>Yeastie Boy Bagels</li>
-                                <li>Ggiata</li>
-                                <li>TenderFest</li>
-                      </ul>
+                  
                     </div>
-                    <div className="clients clients-mobile" style={{ fontWeight: 100 }}>
-                      <p className={myFont.className}>
 
-                        Amazon Studios, 
-                        Diageo, 
-                      Flamingo Estate, 
-                        Coachella, 
-                        Los Angeles Times, 
-                        The Coca Cola Company, 
-                        Family Style Food Festival, 
-                        The Big Global Company, 
-                        Hulu, 
-                        FX, 
-                        Grand Central Market, 
-                        Broad Street Oyster Co., 
-                        Caruso, 
-                        Caviar Kaspia, 
-                        Ginza Nishikawa, 
-                        Dorsia, 
-                        CINESPIA, 
-                        Best Bet, 
-                        Yangban, 
-                        NVE, 
-                        The Line Hotel, 
-                        Grupo Hunan, 
-                        sbe, 
-                        Ace Hotel, 
-                        Boka Group, 
-                        Best Buddy Hospitality, 
-                        Big Noise Beer, 
-                        Aldar, 
-                        Tacos 1986,
-                        Yeastie Boy Bagels,
-                        Ggiata,
-                        TenderFest
-                        </p>
-                    </div>
                     <div className="contact-section" style={{marginTop: '60px'}}>
 
                   <h2
@@ -480,4 +415,14 @@ export default function Connect(props) {
       </AnimatePresence > { " "}
     </>
   );
+}
+export async function getStaticProps() {
+  // Get data from headless CMS
+  const product = await client.getEntry('461MmpDfDdn1Yzwp05sj3l')
+
+  return {
+    props: {
+      ...product.fields
+    },
+  }
 }
