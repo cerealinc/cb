@@ -374,7 +374,7 @@ export default function Connect(props) {
                             >
                               <div className="footer-container">
                     <Link href="mailto:info@carvingblockpr.com" className={myFont.className} style={{float: "left"}}>Contact</Link>
-                    <Link href="https://www.instagram.com/carvingblockpr/" className={myFont.className} style={{float: "right"}}>Instagram</Link>
+                    <Link href="https://www.instagram.com/carvingblock/" className={myFont.className} style={{float: "right"}}>Instagram</Link>
                     </div>
                     </div>
 </div>
